@@ -1,0 +1,20 @@
+services:
+  dissertacao:
+    image: lar-gazebo:noetic
+    container_name: lar_dissertacao
+    network_mode: host
+    ipc: host
+    privileged: true
+    environment:
+      DISPLAY: ${DISPLAY}
+      QT_X11_NO_MITSHM: "1"
+      NVIDIA_DRIVER_CAPABILITIES: all
+    volumes:
+      - ./src:/ws/src:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.gazebo:/home/${USER_NAME:-ros}/.gazebo:rw
+      - /dev/dri:/dev/dri
+    working_dir: /ws
+    stdin_open: true
+    tty: true
+    command: bash

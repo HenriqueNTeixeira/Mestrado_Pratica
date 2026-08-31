@@ -1,0 +1,25 @@
+# build do catkin
+build/
+devel/
+logs/
+install/
+
+# dados gerados (reproduzíveis via script + semente)
+data/
+datasets/
+*.npz
+*.h5
+*.hdf5
+
+# modelos treinados
+checkpoints/
+*.pth
+*.ckpt
+
+# rosbags
+*.bag
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
